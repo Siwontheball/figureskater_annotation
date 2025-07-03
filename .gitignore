@@ -1,0 +1,22 @@
+# --- Python & VS Code ---
+__pycache__/
+.vscode/
+*.py[cod]
+
+# --- Virtual env ---
+.venv/
+env/
+
+# --- Large artefacts ---
+input/          # raw videos
+output/         # rendered videos / frames
+*.mp4
+*.webm
+*.avi
+*.pt            # PyTorch checkpoints
+*.pth
+*.onnx
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db

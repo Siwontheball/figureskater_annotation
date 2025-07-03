@@ -1,0 +1,5 @@
+# Which YOLO model to load
+yolo_model: yolov8x.pt
+
+# pixels/frame: any track with true motion slower than this is dropped
+min_velocity: 2.0

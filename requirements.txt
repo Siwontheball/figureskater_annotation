@@ -1,0 +1,5 @@
+ultralytics          # for YOLOv8
+opencv-python
+numpy
+pyyaml
+filterpy             # for a simple SORT tracker (optional)
