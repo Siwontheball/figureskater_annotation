@@ -1,23 +1,37 @@
 # Figure Skater Annotation
 
 ## What it does  
-This repo combines a real-time YOLOv8 skater detector with a trained jump-classifier (LSTM/TCN) to annotate figure‐skate videos.
-I annotated only the skaters by using the following method.
-for each frame t:
-  1. Track bbox → compute (u_t,v_t) centroid
-  2. Estimate camera shift → (Δu_cam, Δv_cam)
-  3. Compute object motion:
-       Δu_obj = (u_t - u_{t-1}) - Δu_cam
-       Δv_obj = (v_t - v_{t-1}) - Δv_cam
-       v = sqrt(Δu_obj^2 + Δv_obj^2) / Δt
-  4. Base‐patch brightness:
-       x_c = (x1 + x2)/2, y_b = y2
-       Ī = mean of I(x, y_b) for x in [x_c - w/2, x_c + w/2]
-       if Ī ≥ T:
-         ground_contact = True
-       else:
-         ground_contact = False
-Each skater is boxed in green ellipse.
+## What it does
+
+This repo combines a real-time YOLOv8 skater detector with a trained jump-classifier (LSTM/TCN) to annotate figure-skate videos.  
+For every frame *t* I isolate the skater and compute:
+
+1. **Track centroid**  
+   \( \mathbf{u}_t = (u_t,\; v_t) \)
+
+2. **Estimate camera shift**  
+   \( \Delta\mathbf{u}_{\text{cam}} = (\Delta u_{\text{cam}},\; \Delta v_{\text{cam}}) \)
+
+3. **Object motion**  
+   \[
+   \Delta\mathbf{u}_{\text{obj}}
+     = \mathbf{u}_t - \mathbf{u}_{t-1} - \Delta\mathbf{u}_{\text{cam}}
+   \]  
+   \[
+   v = \frac{\lVert \Delta\mathbf{u}_{\text{obj}}\rVert_2}{\Delta t}
+   \]
+
+4. **Ground-contact test**  
+   \[
+     x_c = \frac{x_1 + x_2}{2}, \quad y_b = y_2
+   \]  
+   \[
+     \bar I = \frac{1}{w} \sum_{x = x_c - w/2}^{x_c + w/2} I(x, y_b)
+   \]  
+   If \( \bar I \ge T \) ⇒ `ground_contact = true`, else `false`.
+
+Each skater is finally boxed in a green ellipse.
+
 
 ## Requirements  
 
