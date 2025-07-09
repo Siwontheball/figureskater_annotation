@@ -37,12 +37,9 @@ cp /path/to/your_video.mp4 input/
 # (c) run
 python main.py --video input/my_video.mp4 --out output/ --device cpu
 
-## Before vs. After
+# Demo
+## Before
+![skaters detected by yolo model](images/annotated_yolo.png)
+## After
+![skaters detected by improved model](images/after_extra_code.png)
 
-<p align="center">
-  <img src="images/annotated_yolo.png" width="600" alt="YOLO detections"/>
-</p>
-
-<p align="center">
-  <img src="images/after_extra_code.png" width="600" alt="filter of detecting skaters applied"/>
-</p>
