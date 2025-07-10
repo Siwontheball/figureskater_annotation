@@ -1,6 +1,5 @@
 # Figure Skater Annotation
 
-## What it does  
 ## What it does
 
 This repo combines a real-time YOLOv8 human detector with a following method to annotate only a skater.
