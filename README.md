@@ -14,8 +14,15 @@ $$
 2. **Estimate camera shift**
 
 $$
-\delta\mathbf{u}_{\text{cam}}
-  = (\delta u_{\text{cam}},\, \delta v_{\text{cam}})
+\Delta\mathbf{u}_{\text{cam}}
+  = (\Delta u_{\text{cam}},\, \Delta v_{\text{cam}})
+$$
+
+$$
+\[
+  \Delta\mathbf{u}_{\mathrm{cam}}
+    = \bigl(\Delta u_{\mathrm{cam}},\, \Delta v_{\mathrm{cam}}\bigr)
+\]
 $$
 
 3. **Object motion**
