@@ -18,13 +18,6 @@ $$
   = (\Delta u_{\text{cam}},\, \Delta v_{\text{cam}})
 $$
 
-$$
-\[
-  \Delta\mathbf{u}_{\mathrm{cam}}
-    = \bigl(\Delta u_{\mathrm{cam}},\, \Delta v_{\mathrm{cam}}\bigr)
-\]
-$$
-
 3. **Object motion**
 
 $$
@@ -34,6 +27,20 @@ $$
 
 $$
 v = \frac{\lVert \Delta\mathbf{u}_{\text{obj}}\rVert_2}{\Delta t}
+$$
+
+$$
+\Delta\boldsymbol{u}_{\mathrm{cam},t}
+= \boldsymbol{u}_{\mathrm{cam},t} \;-\; \boldsymbol{u}_{\mathrm{cam},t-1}
+= \bigl(\Delta u_{\mathrm{cam},t},\,\Delta v_{\mathrm{cam},t}\bigr)
+$$
+
+3. **Object motion**
+
+$$
+\Delta\boldsymbol{u}_{\mathrm{obj},t}
+= \bigl(\boldsymbol{u}_{t} - \boldsymbol{u}_{t-1}\bigr)
+  - \Delta\boldsymbol{u}_{\mathrm{cam},t}
 $$
 
 4. **Ground-contact test**
